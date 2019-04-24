@@ -39,10 +39,9 @@ set(mull_SRC
   ${SRC}/naivemath.f90
   ${SRC}/bettermath.f90
   ${SRC}/dotmath.f90
+  ${SRC}/matgenerator.f90
   ${SRC}/main.f90
   )
-
-
 
 # Target definition
 add_executable(mull ${mull_SRC})
