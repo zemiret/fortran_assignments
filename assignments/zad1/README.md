@@ -2,27 +2,16 @@
 Aby zbudowć kod, najlepiej odpalic `./build.sh`
 
 # Wyniki
+(Przeglądarka może nie obsługiwać podglądu pdf'ow w markdownie)
 
 ## kind = 4
-<object data="https://github.com/zemiret/fortran_assignments/raw/master/assignments/zad1/res/wykres4.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/zemiret/fortran_assignments/raw/master/assignments/zad1/res/wykres4.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+![](res/wykres4.pdf)
 
 ## kind = 8
-<object data="https://github.com/zemiret/fortran_assignments/raw/master/assignments/zad1/res/wykres8.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/zemiret/fortran_assignments/raw/master/assignments/zad1/res/wykres8.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+![](res/wykres8.pdf)
 
 ## kind = 16
-<object data="https://github.com/zemiret/fortran_assignments/raw/master/assignments/zad1/res/wykres16.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/zemiret/fortran_assignments/raw/master/assignments/zad1/res/wykres16.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+![](res/wykres16.pdf)
 
 # Wnioski
 
