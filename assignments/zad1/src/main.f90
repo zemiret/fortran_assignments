@@ -32,7 +32,8 @@ open(unit=31, file="res/plotdata/matmul4.plt", action="write")
 open(unit=32, file="res/plotdata/matmul8.plt", action="write")
 open(unit=33, file="res/plotdata/matmul16.plt", action="write")
 
-do i = 10, 1280, 10
+i = 10
+do while (i <= 1280)
     A1 = random_matrix4(i, i)
     B1 = random_matrix4(i, i)
 
@@ -46,67 +47,69 @@ do i = 10, 1280, 10
     call cpu_time(start)
          C1 = naivemul(A1, B1) 
     call cpu_time(finish)
-    write(1, "(I4 f6.3)") i, (finish-start)
+    write(1, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
          C2 = naivemul(A2, B2) 
     call cpu_time(finish)
-    write(2, "(I4 f6.3)") i, (finish-start)
+    write(2, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
          C3 = naivemul(A3, B3) 
     call cpu_time(finish)
-    write(3, "(I4 f6.3)") i, (finish-start)
+    write(3, '(I5," ",ES12.5)') i, (finish-start)
 
     ! betmul
     call cpu_time(start)
          C1 = betmul(A1, B1) 
     call cpu_time(finish)
-    write(11, "(I4 f6.3)") i, (finish-start)
+    write(11, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
          C2 = betmul(A2, B2) 
     call cpu_time(finish)
-    write(12, "(I4 f6.3)") i, (finish-start)
+    write(12, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
          C3 = betmul(A3, B3) 
     call cpu_time(finish)
-    write(13, "(I4 f6.3)") i, (finish-start)
+    write(13, '(I5," ",ES12.5)') i, (finish-start)
 
     ! dotmul
     call cpu_time(start)
         C1 = dotmul(A1, B1) 
     call cpu_time(finish)
-    write(21, "(I4 f6.3)") i, (finish-start)
+    write(21, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
         C2 = dotmul(A2, B2) 
     call cpu_time(finish)
-    write(22, "(I4 f6.3)") i, (finish-start)
+    write(22, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
         C3 = dotmul(A3, B3) 
     call cpu_time(finish)
-    write(23, "(I4 f6.3)") i, (finish-start)
+    write(23, '(I5," ",ES12.5)') i, (finish-start)
 
     ! matmul 
     call cpu_time(start)
         C1 = matmul(A1, B1) 
     call cpu_time(finish)
-    write(31, "(I4 f6.3)") i, (finish-start)
+    write(31, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
         C2 = matmul(A2, B2) 
     call cpu_time(finish)
-    write(32, "(I4 f6.3)") i, (finish-start)
+    write(32, '(I5," ",ES12.5)') i, (finish-start)
 
     call cpu_time(start)
         C3 = matmul(A3, B3) 
     call cpu_time(finish)
-    write(33, "(I4 f6.3)") i, (finish-start)
+    write(33, '(I5," ",ES12.5)') i, (finish-start)
 
     write(*, "(I4)") i
+
+    i = i * 2
 end do
 
 end program main

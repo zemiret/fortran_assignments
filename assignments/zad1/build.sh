@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p out
 mkdir -p res
 mkdir -p res/plotdata
 
