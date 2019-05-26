@@ -5,6 +5,8 @@ make
 ```
 
 ## Opis projektu 
+Projekt wymaga zainstalowanej biblioteki [FFTW3](http://www.fftw.org/).
+
 
 **Aby uruchomić**<br>
 Zad1:
