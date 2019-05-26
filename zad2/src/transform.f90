@@ -36,8 +36,6 @@ call fftw_destroy_plan(plan)
 
 do i = 1, data_size, 1
     x = xs(i)
-    write(*, '(ES12.5," ",ES12.5," ",ES12.5)') x, real(real(outmat(i))), real(aimag(outmat(i)))
-
     write(2, '(ES12.5," ",ES12.5)') x, real(real(outmat(i)))
     write(3, '(ES12.5," ",ES12.5)') x, real(aimag(outmat(i)))
 end do

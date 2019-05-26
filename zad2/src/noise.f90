@@ -33,10 +33,12 @@ do i = 1, data_size, 1
     write(1, '(ES12.5," ",ES12.5)') x, inmat(i)
 end do
 
+! Forward transform
 plan = fftw_plan_dft_1d(data_size, inmat, outmat, FFTW_FORWARD, FFTW_ESTIMATE)
 
 call fftw_execute_dft(plan, inmat, outmat)
 call fftw_destroy_plan(plan)
+
 
 do i = 1, data_size, 1
     x = xs(i)
@@ -45,24 +47,23 @@ do i = 1, data_size, 1
 end do
 
 do i = 1, data_size, 1
+    x = xs(i)
     if (abs(outmat(i)) < 50) then
         outmat(i) = cmplx(0, 0)
     end if
-
-    x = xs(i)
-!    write(*, '(ES12.5," ",ES12.5," ",ES12.5)') x, real(real(outmat(i))), real(aimag(outmat(i)))
 end do
 
+! Backward transform
 plan = fftw_plan_dft_1d(data_size, outmat, resmat, FFTW_BACKWARD, FFTW_ESTIMATE)
 
 call fftw_execute_dft(plan, outmat, resmat)
 call fftw_destroy_plan(plan)
 
-
 do i = 1, data_size, 1
     x = xs(i)
-    write(4, '(ES12.5," ",ES12.5)') x, real(aimag(resmat(i)))
+    write(4, '(ES12.5," ",ES12.5)') x, real(real(resmat(i)))
 end do
+
 
 deallocate(xs)
 deallocate(inmat)
