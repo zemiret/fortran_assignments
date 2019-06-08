@@ -1,6 +1,6 @@
 module mod_funs
 implicit none
-    real(kind=8), dimension(10):: coeffs = (/ 1, 4, 6, 1, 2, 6, 7, 2, 1, 2 /) 
+    real(kind=8), dimension(10):: coeffs = [1, 4, 6, 1, 2, 6, 7, 2, 1, 2]
 
 contains
 

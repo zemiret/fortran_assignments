@@ -1,5 +1,5 @@
-CC=gfortran
-FLAGS=-std=f2008 -fbounds-check -lfftw3
+CC=ifort
+FLAGS=-coarray
 MAIN=main
 
 all: lib
@@ -7,8 +7,8 @@ all: lib
 	make clean
 
 lib:
-	$(CC) -c src/integrate.f90 -o src/integrate.o 
-	$(CC) -c src/funs.f90 -o src/funs.o 
+	$(CC) $(FLAGS) -c src/integrate.f90 -o src/integrate.o 
+	$(CC) $(FLAGS) -c src/funs.f90 -o src/funs.o 
 
 clean:
 	mv *.mod src
